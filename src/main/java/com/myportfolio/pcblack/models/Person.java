@@ -1,4 +1,3 @@
-
 package com.myportfolio.pcblack.models;
 
 import javax.persistence.Column;
@@ -9,11 +8,13 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
+
+
+
 /**
  *
  * @author Black
  */
-
 @Setter @Getter
 @Entity
 public class Person {
@@ -25,7 +26,7 @@ public class Person {
     private String nombre;
     private String apellido;
     
-    @Column(name = "url_imagen", length = 2048)
+    @Column(length = 2048)
     private String urlImagen;
     
 }

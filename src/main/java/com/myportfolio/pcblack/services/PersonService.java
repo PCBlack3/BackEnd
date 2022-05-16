@@ -1,4 +1,3 @@
-
 package com.myportfolio.pcblack.services;
 
 import com.myportfolio.pcblack.models.Person;
@@ -13,38 +12,37 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PersonService {
-    
+
     @Autowired
     PersonRepository personRepository;
-    
-    public ArrayList<Person> getAllPersons(){
+
+    public ArrayList<Person> getAllPersons() {
         return (ArrayList<Person>) personRepository.findAll();
     }
-    
-    public Person savePerson(Person person){
+
+    public Person savePerson(Person person) {
         return personRepository.save(person);
     }
-    
-    public Person getPersonById(Long id){
+
+    public Person getPersonById(Long id) {
         return personRepository.findById(id).get();
     }
-    
-    public ArrayList<Person> getPersonByApellido(String apellido){
-        return personRepository.finByApellido(apellido);
+
+    public ArrayList<Person> getPersonByApellido(String apellido) {
+        return personRepository.findByApellido(apellido);
     }
-    
-    public boolean removePerson(Long id){
-        try{
+
+    public boolean removePerson(Long id) {
+        try {
             personRepository.deleteById(id);
             return true;
-        } catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
-    
-    public Person findPersonById(Long personId){
-        return personRepository.findById(personId).get();
-    }
-}
-    
 
+    public Person findById(Long id) {
+        return personRepository.findById(id).get();
+    }
+
+}

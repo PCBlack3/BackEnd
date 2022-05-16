@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author Black
  */
-public interface PersonRepository extends JpaRepository<Person, Long>{
-    public ArrayList<Person> finByApellido(String apellido);
+public interface PersonRepository extends JpaRepository<Person,Long>{
+    public abstract ArrayList<Person> findByApellido(String apellido);
 }
