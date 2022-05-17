@@ -61,9 +61,10 @@ public class EducationController {
         return new ResponseEntity<>(newEducation, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Education> updateComment(@PathVariable("id") Long id, @RequestBody Education educationRequest) {
+ @PutMapping("/{id}")
+    public ResponseEntity<Education> updateComment(@PathVariable("id") long id, @RequestBody Education educationRequest) {
         Education education = educationService.getEducationById(id);
+        // .orElseThrow(() -> new ResourceNotFoundException("EducationId " + id + "not found"));
         education.setPerson(educationRequest.getPerson());
         educationRequest.setId(education.getId());
         ModelMapper modelMapper = new ModelMapper();
