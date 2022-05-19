@@ -49,8 +49,8 @@ public class ProjectController {
         return new ResponseEntity<>(project, HttpStatus.OK);
     }
     
-    @GetMapping("/person/{id}")
-    public ResponseEntity<List<Project>> getAllProjectByPersonId(@PathVariable(value = "personId") Long personId){
+    @GetMapping("/person/{person_id}")
+    public ResponseEntity<List<Project>> getAllProjectByPersonId(@PathVariable(value = "person_id") Long personId){
         List<Project> projectList = new ArrayList<>();
         if(personService.getPersonById(personId) != null){
             projectList = projectService.getProjectByPersonId(personId);
